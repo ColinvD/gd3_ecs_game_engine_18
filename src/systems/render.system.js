@@ -1,20 +1,19 @@
 import System from "./system";
 import Transform from "../components/transform.component";
+import Apple from "../components/apple.component";
 
 class RenderSystem extends System {
 
     getRequiredComponents(){
-        return [ Transform ];
+        return [ Transform, Apple ];
     }
 
     updateEntity = entity => {
-        const { transform } = entity.components;
+        const { transform, apple } = entity.components;
 
-        var c = document.getElementById("canvas");
-        var ctx = c.getContext("2d");
-        ctx.beginPath();
-        ctx.arc(transform.position.x, transform.position.y, 50, 0, 2 * Math.PI);
-        ctx.stroke();
+        apple.ctx.beginPath();
+        apple.ctx.arc(transform.position.x, transform.position.y, apple.size, 0, 2 * Math.PI);
+        apple.ctx.stroke();
 
         console.log("dit is mijn geweldige tekening");
     }
