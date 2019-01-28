@@ -63,8 +63,7 @@ class Engine {
     }
 
     start(){
-        var c = document.getElementById("canvas");
-        var ctx = c.getContext("2d");
+        this.ctx = document.getElementById("canvas").getContext("2d");
         this.updateIntervalId = setInterval(this.update, 1000 / this.frameRate);
     }
 
@@ -73,7 +72,7 @@ class Engine {
      */
     update = () => {
 
-        ctx.clearRect(1,1,298,298);
+        this.ctx.clearRect(1,1,298,298);
         this.systems.forEach(system => system.update());
     };
 
