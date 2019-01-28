@@ -17,7 +17,7 @@ export default class Main {
         engine.addSystem(new RenderSystem());
 
         const player = new Entity();
-        player.addComponent(new Transform(new Vec3(0, 0, 0)));
+        player.addComponent(new Transform(new Vec3(0, 100, 0)));
         player.addComponent(new Velocity(new Vec3(1, 1, 1), new Vec3(1, 1, 1)));
         player.addComponent(new Destination(new Vec3(500, 1, 1)));
 

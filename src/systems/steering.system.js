@@ -1,17 +1,19 @@
 import System from "./system";
 import Velocity from "../components/velocity.component";
 import Transform from "../components/transform.component";
-import Destination from "../components/destination.component";
+// import Destination from "../components/destination.component";
 
 class SteeringSystem extends System {
 
     getRequiredComponents() {
-        return [ Velocity, Transform, Destination ];
+        // return [ Velocity, Transform, Destination ];
+          return [ Velocity, Transform ];
     }
 
     updateEntity = entity => {
-        const { transform, velocity, destination } = entity.components;
-
+        // const { transform, velocity, destination } = entity.components;
+        const { transform, velocity } = entity.components;
+        /*
         const speed = 5;
         const desiredStep = transform.position.clone().sub(destination.position);
 
@@ -25,6 +27,16 @@ class SteeringSystem extends System {
         const steeringForce = desiredVelocity.sub(velocity);
 
         //velocity = velocity.add() + steeringForce / mass;
+        */
+
+        if((transform.position.x < 0 && velocity.position.x < 0) || (transform.position.x > 300 && velocity.position.x > 0))
+        {
+            velocity.position.x *= -1
+        }
+        if((transform.position.y < 0 && velocity.position.y < 0) || (transform.position.y > 300 && velocity.position.y > 0))
+        {
+            velocity.position.y *= -1
+        }
     }
 
 }
