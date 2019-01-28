@@ -29,11 +29,11 @@ class SteeringSystem extends System {
         //velocity = velocity.add() + steeringForce / mass;
         */
 
-        if((transform.position.x < 0 && velocity.position.x < 0) || (transform.position.x > 300 && velocity.position.x > 0))
+        if((transform.position.x < 50 && velocity.position.x < 0) || (transform.position.x > 250 && velocity.position.x > 0))
         {
             velocity.position.x *= -1
         }
-        if((transform.position.y < 0 && velocity.position.y < 0) || (transform.position.y > 300 && velocity.position.y > 0))
+        if((transform.position.y < 50 && velocity.position.y < 0) || (transform.position.y > 250 && velocity.position.y > 0))
         {
             velocity.position.y *= -1
         }
