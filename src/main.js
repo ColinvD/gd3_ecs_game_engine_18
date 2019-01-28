@@ -7,7 +7,7 @@ import Vec3 from './utils/vec3.utils.js';
 import Destination from "./components/destination.component";
 import SteeringSystem from "./systems/steering.system";
 import RenderSystem from "./systems/render.system";
-import Apple from "./systems/apple.component";
+import Apple from "./components/apple.component";
 
 export default class Main {
 
