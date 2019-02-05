@@ -14,7 +14,7 @@ class MovementSystem extends System {
         transform.position.add(velocity.position);
         transform.rotation.add(velocity.rotation);
 
-        console.log(transform.position);
+        //console.log(transform.position);
     }
 
 }
